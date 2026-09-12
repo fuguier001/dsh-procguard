@@ -45,6 +45,19 @@ cd dsh-procguard/assets && bash install-os-layer.sh
 
 ### 第二步：安装插件（web profile）
 
+方式一：**GitHub Packages**（npm registry，需配一次 `.npmrc`）
+
+```bash
+# 在 ~/.npmrc（没有就新建）加两行：
+@fuguier001:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<你的GitHub令牌，需read:packages权限>
+
+cd ~/.dsh/profiles/web
+pnpm add @fuguier001/dsh-procguard
+```
+
+方式二：**GitHub 直装**（免 registry 配置）
+
 ```bash
 cd ~/.dsh/profiles/web
 pnpm add github:fuguier001/dsh-procguard
@@ -64,8 +77,8 @@ cat ~/.dsh/procguard-status.json      # 8 项资产对账结果
 ## 升级 / 卸载
 
 ```bash
-cd ~/.dsh/profiles/web && pnpm update github:fuguier001/dsh-procguard   # 升级
-launchctl bootout gui/$(id -u)/com.fuguier001.dsh-web                   # 停用保活层（一般不需要）
+cd ~/.dsh/profiles/web && pnpm update @fuguier001/dsh-procguard   # 升级（GitHub Packages 方式）
+launchctl bootout gui/$(id -u)/com.fuguier001.dsh-web             # 停用保活层（一般不需要）
 ```
 
 ## 已知边界

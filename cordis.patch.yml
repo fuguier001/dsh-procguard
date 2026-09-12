@@ -2,4 +2,4 @@
 # 并进 ~/.dsh/profiles/web/cordis.patch.yml（放在其他 - insert 行之后即可）
 - insert:
     - id: procguard
-      name: 'dsh-procguard'
+      name: '@fuguier001/dsh-procguard'

@@ -1,7 +1,7 @@
 {
-  "name": "dsh-procguard",
+  "name": "@fuguier001/dsh-procguard",
   "version": "1.0.1",
-  "description": "DSH 进程看护管家：对账并自修复 launchd/systemd 看护层与插件依赖链。macOS 全链路实测，Linux systemd 骨架（未实测），不支持 Windows（桩已删：无验证手段不做假实现）。",
+  "description": "DSH 进程看护管家：对账并自修复 launchd/systemd 看护层与插件依赖链。macOS 全链路实测，Linux systemd 骨架（未实测），不支持 Windows（桩已删：无验证手段不做假实现）。 通过 GitHub Packages 分发。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -28,5 +28,8 @@
     "systemd"
   ],
   "author": "fuguier001",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
