@@ -1,0 +1,5 @@
+# dsh-procguard — 进程看护管家（Host 半区，零 import，boot 安全）
+# 并进 ~/.dsh/profiles/web/cordis.patch.yml（放在其他 - insert 行之后即可）
+- insert:
+    - id: procguard
+      name: 'dsh-procguard'
