@@ -72,6 +72,7 @@ launchctl bootout gui/$(id -u)/com.fuguier001.dsh-web                   # 停用
 
 - 管家的对账资产清单（路径、agent 名）当前按作者机器写死（`~/Documents/DSCli/dsh-imgview` 等）；换机器需改 `lib/index.js` 顶部 `assets` 常量。
 - 堆快照依赖启动参数 `--heapsnapshot-signal=SIGUSR2`（keepalive 脚本已内置）；手动 `dsh web` 启动的实例没有该开关，哨兵只记警情不动进程。
+- 插件沙箱按实例 cwd 授权文件写入：keepalive 保证 `cd $HOME`，故 `~/.dsh/procguard-status.json` 正常落盘；若从其他目录裸启 dsh web，状态写盘会被拒（已优雅降级：只记日志，审计与自愈不受影响，2026-09-12 3099 端口实测）。
 - Linux 的 assets 脚本移植（`lsof`→`ss`、launchctl→systemctl）欢迎 PR——带上你的真机验证记录。
 
 ## License

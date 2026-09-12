@@ -30,4 +30,4 @@ PROC_PKG="$HOME/.dsh/profiles/web/node_modules/dsh-procguard"
 node -e 'import(process.argv[1] + "/lib/index.js").then(() => process.exit(0)).catch(() => process.exit(1))' "$PROC_PKG" \
   || fail "dsh-procguard 导入失败（vendor 内容损坏，boot 会在插件树连坐——先修再启）"
 
-echo "[preflight] ✓ 插件依赖链健康（imgview 两个 peer 包可解析、profile 软链在位、procguard vendor 可导入）"
+echo "[preflight] ✓ 插件依赖链健康（imgview 两个 peer 包可解析、profile 软链在位、procguard 装载点可导入）"
